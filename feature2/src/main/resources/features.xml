@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.3.0"
+          name="Lampiris :: Enterprise API : features">
+
+    <repository>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</repository>
+    <repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features</repository>
+
+    <feature name="${project.artifactId}" version="${project.version}">
+        <!-- allow camel to access its own mbeans for karaf commands and other needs -->
+        <config name="jmx.acl.org.apache.camel">
+            * = *
+        </config>
+        <feature>war</feature>
+        <feature>camel</feature>
+        <feature>camel-metrics</feature>
+        <feature>camel-servlet</feature>
+        <feature>camel-jackson</feature>
+        <feature>camel-bean-validator</feature>
+        <feature>camel-http4</feature>
+        <feature>camel-hazelcast</feature>
+        <feature>camel-jsonpath</feature>
+
+        <!--Depends on feature1 project-->
+        <feature>feature1</feature>
+    </feature>
+</features>

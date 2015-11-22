@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.3.0"
+          name="Lampiris : el2-common-query-features">
+
+    <feature name="${project.artifactId}" version="${project.version}">
+        <!-- features -->
+        <feature>pax-cdi-1.2</feature>
+        <feature>cxf</feature>
+        <feature>camel</feature>
+        <feature>camel-gson</feature>
+
+        <!-- Dependencies -->
+        <bundle>mvn:org.apache.cxf/cxf-rt-rs-extension-search/3.1.2</bundle>
+        <bundle>mvn:com.google.guava/guava/18.0</bundle>
+        <bundle>mvn:org.apache.commons/commons-lang3/3.4</bundle>
+        <bundle>mvn:org.apache.olingo/olingo-odata2-api/2.0.4</bundle>
+        <bundle>mvn:org.apache.olingo/olingo-odata2-core/2.0.4</bundle>
+    </feature>
+</features>
